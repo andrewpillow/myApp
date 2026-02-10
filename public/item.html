@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="list">
+    <span>运动</span>
+    <div class="item">
+      <ul>
+        <li v-for="item in itemArr">
+          <span>{{item.exerciseName}}</span>
+          <span>{{item.countNum}}</span>
+          <span>{{item.timeNum}}</span>
+          <button>delet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+  <script>
+    const list = new Vue({
+      el: '.list',
+      data: {
+        iitemArr: [
+          { id: 1, exerciseName: '腿举机', countNum: '2', timeNum: '3' },
+          { id: 2, exerciseName: '椭圆机', countNum: '3', timeNum: '4' },
+          { id: 3, exerciseName: '史密斯卧推', countNum: '4', timeNum: '3' },
+
+        ]
+
+      }
+    })
+  </script>
+</body>
+
+</html>
