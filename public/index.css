@@ -3,9 +3,11 @@
   box-sizing: border-box;
 }
 
-h1 {
+/* h1 {
   height: 100px;
-}
+} */
+
+/*   home.html   */
 
 .nav-icon img {
   width: 15%;
@@ -57,15 +59,15 @@ h1 {
 
 
 
-/* item.html内容 */
+/*   item.html   */
 .list {
-  margin-top: 60px;
+  margin-top: 93.2px;
 
   display: inline-block;
   border-radius: 40px 40px 0 0;
 
-  width: 100%;
-  height: 800px;
+  width: 390px;
+  height: 844px;
   box-shadow: 0px -10px 30px rgb(181, 181, 181);
 
 }
@@ -74,7 +76,6 @@ h1 {
   margin-left: 30px;
 
   display: inline-block;
-  width: 100%;
 
   line-height: 87px;
   font-size: 22px;

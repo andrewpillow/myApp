@@ -10,17 +10,32 @@
 </head>
 
 <body>
+
+  <div class="nav-icon" style="height: 37.4px; ">
+    <img src="./assets/nav-bar.svg" style="position:absolute;left:7px;margin-top: 40px;">
+  </div>
+
   <div class="list">
     <span>运动</span>
+    <hr style="margin: 0 30px;">
     <div class="item">
-      <ul>
-        <li v-for="item in itemArr">
-          <span>{{item.exerciseName}}</span>
-          <span>{{item.countNum}}</span>
-          <span>{{item.timeNum}}</span>
-          <button>delet</button>
-        </li>
-      </ul>
+      <table style="width: 330px;margin: 0 30px;">
+        <tr>
+          <th>动作名称</th>
+          <th>组数</th>
+          <th>计时</th>
+          <th>删除</th>
+        </tr>
+        <tr v-for="item in itemArr" class="itemManage" style="text-align: center;">
+          <td>{{ item.exerciseName }}</td>
+          <td>{{ item.countNum }}</td>
+          <td>{{ item.timeNum }}</td>
+          <td>
+            <button @click="del(item.id)">delete</button>
+          </td>
+        </tr>
+      </table>
+
     </div>
   </div>
 
@@ -30,13 +45,16 @@
     const list = new Vue({
       el: '.list',
       data: {
-        iitemArr: [
+        itemArr: [
           { id: 1, exerciseName: '腿举机', countNum: '2', timeNum: '3' },
           { id: 2, exerciseName: '椭圆机', countNum: '3', timeNum: '4' },
           { id: 3, exerciseName: '史密斯卧推', countNum: '4', timeNum: '3' },
-
         ]
-
+      },
+      methods: {
+        del(id) {
+          this.itemArr = this.itemArr.filter(item => item.id !== id)
+        }
       }
     })
   </script>
