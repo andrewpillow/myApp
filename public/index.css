@@ -96,3 +96,41 @@
   border-radius: 25px 0 0 25px;
   padding: 0 20px;
 }
+
+
+
+/* nav.html */
+.navClose {
+  margin-top: 50px;
+  margin-left: 30px;
+
+  height: 60px;
+
+}
+
+.navMenu {
+  width: 390;
+  height: 500px;
+}
+
+.navMenu li {
+  list-style: none;
+  width: 390px;
+  height: 70px;
+
+}
+
+.navMenu .active {
+  color: #f9f9f9;
+  background-color: #000000;
+}
+
+.navMenu span {
+  float: right;
+  padding-right: 40px;
+
+  line-height: 70px;
+  font-size: 30px;
+  font-weight: 100;
+
+}

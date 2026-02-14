@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 关闭按钮 -->
+  <div class="navClose">
+    <img style="width: 10%;" src="./assets/close.svg">
+  </div>
+
+
+
+  <!-- 导航菜单 -->
+  <div class="navMenu">
+    <ul style="padding: 0;">
+      <li v-for="(item,index) in menuTab" :key="item.id" @click="activeNum = index"
+        :class="{active:activeNum === index}">
+        <span>{{ item.name}}</span>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+  <script>
+
+    const menu = new Vue({
+      el: '.navMenu',
+      data: {
+        activeNum: '',
+        menuTab: [
+          { id: 1, name: 'Home' },
+          { id: 2, name: 'Profile' },
+          { id: 3, name: 'Setting' },
+          { id: 4, name: 'logOut' }
+        ]
+      }
+    })
+
+  </script>
+
+
+</body>
+
+</html>
