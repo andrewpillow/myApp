@@ -81,3 +81,18 @@
   font-size: 22px;
   font-weight: 300;
 }
+
+.addItem {
+  margin: 10px auto;
+
+  width: 330px;
+  height: 50px;
+
+}
+
+.addItem input {
+  width: 70%;
+  height: 50px;
+  border-radius: 25px 0 0 25px;
+  padding: 0 20px;
+}

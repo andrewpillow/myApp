@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="loginForm">
+    账号：<input type="text" v-model="username"><br>
+    密码：<input type="password" v-model="password"><br>
+    <button @click="login">登陆</button>
+    <button @click="reset">重置</button>
+  </div>
+
+
+  <!-- 引入vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+  <script>
+    const loginForm = new Vue({
+      el: '.loginForm',
+      data: {
+        username: '',
+        password: '',
+      },
+      methods: {
+        login() {
+          console.log(this.username, this.password)
+        },
+        reset() {
+          this.username = '',
+            this.password = ''
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

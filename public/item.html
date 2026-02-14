@@ -10,15 +10,28 @@
 </head>
 
 <body>
-
+  <!-- 1导航图标 -->
   <div class="nav-icon" style="height: 37.4px; ">
     <img src="./assets/nav-bar.svg" style="position:absolute;left:7px;margin-top: 40px;">
   </div>
 
+  <!-- 2列表展示 -->
   <div class="list">
-    <span>运动</span>
+    <span>运动</span><br>
+
+    <!--2/1搜索  -->
+    <div class="addItem">
+      <input type="text" id="itemAdd" v-model="addItems">
+      <span
+        style="width: 30%;height:50px;margin:0;font-size: 14px;background-color: black;line-height: 50px;color: aliceblue;text-align: center;float: right;border-radius: 0 25px 25px 0;"
+        @click="addItem">添加训练</span>
+
+    </div>
+
     <hr style="margin: 0 30px;">
-    <div class="item">
+
+    <!-- 2/2列表 -->
+    <div class="item" v-show="itemArr.length">
       <table style="width: 330px;margin: 0 30px;">
         <tr>
           <th>动作名称</th>
@@ -26,7 +39,7 @@
           <th>计时</th>
           <th>删除</th>
         </tr>
-        <tr v-for="item in itemArr" class="itemManage" style="text-align: center;">
+        <tr v-for="item in itemArr" class="itemManage" style="text-align: center;" :key="item.id">
           <td>{{ item.exerciseName }}</td>
           <td>{{ item.countNum }}</td>
           <td>{{ item.timeNum }}</td>
@@ -36,7 +49,13 @@
         </tr>
       </table>
 
+      <hr style="margin: 0 30px;">
+      <span>合计：{{itemArr.length}}</span>
+      <span style="margin-left: 172.2px;" @click="clearAll">clear all</span>
+
     </div>
+
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
@@ -45,15 +64,28 @@
     const list = new Vue({
       el: '.list',
       data: {
+        addItems: '',
         itemArr: [
           { id: 1, exerciseName: '腿举机', countNum: '2', timeNum: '3' },
           { id: 2, exerciseName: '椭圆机', countNum: '3', timeNum: '4' },
           { id: 3, exerciseName: '史密斯卧推', countNum: '4', timeNum: '3' },
-        ]
+        ],
+        id: "",
       },
       methods: {
         del(id) {
           this.itemArr = this.itemArr.filter(item => item.id !== id)
+        },
+        clearAll() {
+          this.itemArr = ''
+        },
+        addItem() {
+          this.itemArr.push({
+            id: '',
+            exerciseName: this.addItems,
+          })
+          // console.log(this.id)
+
         }
       }
     })
